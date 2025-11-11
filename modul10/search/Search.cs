@@ -8,10 +8,19 @@
         /// <param name="array">Det array der søges i.</param>
         /// <param name="tal">Det tal der skal findes.</param>
         /// <returns></returns>
-        public static int FindNumberLinear(int[] array, int tal) {
-            // TODO: Implement!
+        public static int FindNumberLinear(int[] array, int tal)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == tal)
+                {
+                    return i;
+                }
+            }
             return -1;
         }
+        
+        
         /// <summary>
         /// Finder tallet i arrayet med en binær søgning.
         /// </summary>
@@ -19,7 +28,22 @@
         /// <param name="tal">Det tal der skal findes.</param>
         /// <returns></returns>
         public static int FindNumberBinary(int[] array, int tal) {
-            // TODO: Implement!
+            int start = 0;
+            int end = array.Length - 1;
+            while (start <= end)
+            {
+                int mid = (start + end) / 2;
+                if (array[mid] == tal)
+                {
+                    return mid;
+                }
+                else if (array[mid] < tal)
+                {
+                    start = mid + 1;
+                }
+                else
+                    end = mid - 1;
+            }
             return -1;
         }
 
@@ -45,7 +69,22 @@
         /// <param name="tal">Tallet der skal indsættes</param>
         /// <returns>En kopi af det sorterede array med det nye tal i.</returns>
         public static int[] InsertSorted(int tal) {
-            // TODO: Implement!
+            if (next >= sortedArray.Length)
+                return sortedArray;
+
+            int insertIndex = 0;
+            while (insertIndex < next && sortedArray[insertIndex] < tal)
+            {
+                insertIndex++;
+            }
+
+            for (int i = next; i > insertIndex; i--)
+            {
+                sortedArray[i] = sortedArray[i - 1];
+            }
+
+            sortedArray[insertIndex] = tal;
+            next++;
             
             return sortedArray;
         }

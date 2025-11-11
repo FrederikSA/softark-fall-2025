@@ -15,6 +15,39 @@
     {
         private Node first = null!;
 
+        public void AddSorted(User user)
+        {
+            if (first == null!)
+            {
+                Node firstNode = new Node(user, first);
+                first = firstNode;
+                return;
+            }
+            
+            Node? currentNode = first;
+            Node? previousNode = null!;
+            
+            while (currentNode != null! && 
+                   string.Compare(currentNode.Data.Name, user.Name, StringComparison.OrdinalIgnoreCase) < 0) //hvis den nye kommer efter current i alfabetet 
+            {
+                previousNode = currentNode;
+                currentNode = currentNode.Next;
+            }
+
+            if (previousNode == null!)
+            {
+                Node newNode = new Node(user, currentNode!);
+                first = newNode;
+            }
+
+            else
+            {
+                Node newNode = new Node(user, previousNode.Next);
+                previousNode.Next = newNode;
+            }
+            
+        }
+        
         public void AddFirst(User user)
         {
             Node node = new Node(user, first);
@@ -23,34 +56,38 @@
 
         public User RemoveFirst()
         {
-            // TODO: Implement!
-            return null!;
+            if (first == null!)
+                return null!;
+            Node removedNode = first;
+            first = first.Next;
+            return removedNode.Data;
         }
 
         public void RemoveUser(User user)
         {
-            Node node = first;
-            Node previous = null!;
+            Node currentNode = first;
+            Node previousNode = null!;
             bool found = false;
 
-            while (!found && node != null)
+            while (!found && currentNode != null!)
             {
-                if (node.Data.Name == user.Name)
+                if (currentNode.Data.Name == user.Name)
                 {
                     found = true;
-                    if (node == first)
+                    if (currentNode == first)
                     {
                         RemoveFirst();
                     }
                     else
                     {
-                        previous.Next = node.Next;
+                        previousNode.Next = currentNode.Next;
                     }
                 }
                 else
                 {
-                    previous = node;
-                    node = node.Next;
+                    //vi spoler - vi sætter den nuværende node til at være den tidligere og går 1 frem
+                    previousNode = currentNode;
+                    currentNode = currentNode.Next;
                 }
             }
         }
@@ -62,14 +99,27 @@
 
         public User GetLast()
         {
-            // TODO: Implement
-            return null!;
+            if (first == null!)
+                return null!;
+            while (first.Next != null!)
+            {
+                first = first.Next;
+            }
+            return first.Data;
         }
 
         public int CountUsers()
         {
-            // TODO: Implement
-            return -1;
+            Node currentNode = first;
+            if (first == null!)
+                return -1;
+            int count = 0;
+            while (currentNode != null!)
+            {
+                count++;
+                currentNode = currentNode.Next;
+            }
+            return count;
         }
 
         public override String ToString()
@@ -83,5 +133,20 @@
             }
             return result.Trim();
         }
+
+        public bool? ContainsUser(User user)
+        {
+            Node currentNode = first;
+            if (first == null!)
+                return null!;
+            while (currentNode != null!)
+            {
+                if (currentNode.Data.Name == user.Name)
+                    return true;
+                currentNode = currentNode.Next;
+            }
+            return false;
+        }
     }
+    
 }

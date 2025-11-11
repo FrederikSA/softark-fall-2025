@@ -6,13 +6,15 @@ User torill = new User("Torill", 3);
 User kell = new User("Kell", 4);
 User henrik = new User("Henrik", 5);
 User klaus = new User("Klaus", 6);
+User anders = new User("Anders", 7);
 
 UserLinkedList list = new UserLinkedList();
-list.AddFirst(kristian);
-list.AddFirst(mads);
-list.AddFirst(torill);
-list.AddFirst(henrik);
-list.AddFirst(klaus);
+list.AddSorted(kristian);
+list.AddSorted(mads);
+list.AddSorted(torill);
+list.AddSorted(henrik);
+list.AddSorted(klaus);
+list.AddSorted(anders);
 
 Console.WriteLine(list.CountUsers());
 Console.WriteLine(list);
@@ -22,3 +24,5 @@ list.RemoveFirst();
 
 Console.WriteLine(list.CountUsers());
 Console.WriteLine(list);
+
+Console.WriteLine(list.ContainsUser(kristian));
