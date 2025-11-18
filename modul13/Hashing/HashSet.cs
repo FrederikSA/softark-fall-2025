@@ -6,3 +6,4 @@ public interface HashSet {
     public bool Contains(Object x);
     public int Size();
 }
+ 

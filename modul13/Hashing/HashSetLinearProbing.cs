@@ -3,27 +3,111 @@ using Hashing;
 public class HashSetLinearProbing : HashSet {
     private Object[] buckets;
     private int currentSize;
+    private bool[] isDeleted;
     private enum State { DELETED }
 
     public HashSetLinearProbing(int bucketsLength) {
         buckets = new Object[bucketsLength];
+        isDeleted = new bool[bucketsLength];
         currentSize = 0;
     }
 
-    public bool Contains(Object x) {
-        // TODO: Implement!
+    public bool Contains(object x)
+    {
+        int h = HashValue(x);
+        int index = h;
+        int length = buckets.Length;
+
+        while (buckets[index] != null)
+        {
+            if (!isDeleted[index] && buckets[index].Equals(x))
+            {
+                return true;
+            }
+
+            index = (index + 1) % length;
+
+            if (index == h) 
+            {
+                break;
+            }
+        }
+
         return false;
     }
 
-    public bool Add(Object x) {      
-        // TODO: Implement!
-        return false;
+    public bool Add(object x)
+    {
+        int h = HashValue(x);
+        int index = h;
+        int length = buckets.Length;
+
+        int firstDeletedIndex = -1;
+
+        // Først: find plads eller tjek om x allerede findes
+        while (buckets[index] != null)
+        {
+            // Hvis værdien allerede findes (og ikke er slettet)
+            if (!isDeleted[index] && buckets[index].Equals(x))
+                return false; // findes allerede
+
+            // Husk første slettede plads
+            if (isDeleted[index] && firstDeletedIndex == -1)
+                firstDeletedIndex = index;
+
+            index = (index + 1) % length;
+
+            if (index == h)
+                break;
+        }
+
+        // Hvis eksisterer en DELETED-plads
+        if (firstDeletedIndex != -1)
+        {
+            buckets[firstDeletedIndex] = x;
+            isDeleted[firstDeletedIndex] = false;
+            currentSize++;
+            return true;
+        }
+
+        // Ellers indsæt i den første null-plads
+        if (buckets[index] == null)
+        {
+            buckets[index] = x;
+            isDeleted[index] = false;
+            currentSize++;
+            return true;
+        }
+
+        return false; // tabellen er fuld
     }
 
-    public bool Remove(Object x) {
-        // TODO: Implement!
-        return false;
+
+    public bool Remove(object x)
+    {
+        int h = HashValue(x);
+        int index = h;
+        int length = buckets.Length;
+
+        while (buckets[index] != null)
+        {
+            // Fundet og ikke slettet
+            if (!isDeleted[index] && buckets[index].Equals(x))
+            {
+                isDeleted[index] = true;   // tombstone
+                currentSize--;
+                return true;
+            }
+
+            index = (index + 1) % length;
+
+            if (index == h)
+                break;
+        }
+
+        return false; // ikke fundet
     }
+
 
     public int Size() {
         return currentSize;
