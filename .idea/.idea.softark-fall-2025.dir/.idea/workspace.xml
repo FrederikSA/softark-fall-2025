@@ -11,10 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d4531b2-cbd2-496b-8728-559961a8e58d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/modul10/search/Search.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul10/search/Search.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modul11/LinkedList/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul11/LinkedList/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modul11/LinkedList/UserLinkedList.Tests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul11/LinkedList/UserLinkedList.Tests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modul11/LinkedList/UserLinkedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul11/LinkedList/UserLinkedList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.softark-fall-2025.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.softark-fall-2025.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul04/TodoListBlazor/obj/Debug/net9.0/TodoListBlazor.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul04/TodoListBlazor/obj/Debug/net9.0/TodoListBlazor.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul04/TodoListBlazor/obj/Debug/net9.0/TodoListBlazor.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/modul04/TodoListBlazor/obj/Debug/net9.0/TodoListBlazor.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul06/book-api-ef/obj/Debug/net9.0/TodoApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul06/book-api-ef/obj/Debug/net9.0/TodoApi.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul06/book-api-ef/obj/Debug/net9.0/TodoApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/modul06/book-api-ef/obj/Debug/net9.0/TodoApi.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul10/search/obj/Debug/net9.0/search.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul10/search/obj/Debug/net9.0/search.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul10/search/obj/Debug/net9.0/search.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/modul10/search/obj/Debug/net9.0/search.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul11/LinkedList/obj/Debug/net9.0/list.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/modul11/LinkedList/obj/Debug/net9.0/list.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul11/LinkedList/obj/Debug/net9.0/list.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/modul11/LinkedList/obj/Debug/net9.0/list.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,8 @@
       <workItem from="1761649408135" duration="8220000" />
       <workItem from="1762241944026" duration="2375000" />
       <workItem from="1762248319342" duration="5000" />
-      <workItem from="1762846759968" duration="933000" />
+      <workItem from="1762846759968" duration="1631000" />
+      <workItem from="1762853297612" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="modul 11 update">
       <option name="closed" value="true" />

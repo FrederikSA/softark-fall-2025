@@ -22,14 +22,26 @@ public static class QuickSort
 
     private static int Partition(int[] array, int low, int high)
     {
-        // TODO!
-        return -1;
+        int pivot = array[high];  // pivot = sidste element
+        int i = low - 1;          // index for elementer ≤ pivot
+
+        for (int j = low; j < high; j++)
+        {
+            if (array[j] <= pivot)
+            {
+                i++;
+                Swap(array, i, j);
+            }
+        }
+
+        // flyt pivot på plads
+        Swap(array, i + 1, high);
+
+        return i + 1; // pivot index
     }
 
     public static void Sort(int[] array)
     {
-        /*
         _quickSort(array, 0, array.Length - 1);
-        */
     }
 }
